@@ -92,3 +92,17 @@ router.delete("/:book_ID", (req, res) => {
       }
     });
   });
+
+//   SEARCH DATA
+router.get("/:book_name", (req, res) => {
+    const book_name = req.params.book_name;
+    const book_author = req.body.book_author;
+    var query = "SELECT * FROM book WHERE book_name=? OR book_author=?";
+    connection.query(query, [book_name, book_author], (err, rows) => {
+      if (err) console.log(err);
+      res.send(rows);
+    });
+  });
+
+  
+  module.exports = router;
