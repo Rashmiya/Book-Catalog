@@ -23,3 +23,12 @@ connection.connect(function (err){
     }
 });
 
+// GET ALL
+router.get("/", (req,res)=>{
+    var query = "SELECT * FROM book";
+    connection.query(query, (err, rows) => {
+        if (err) throw err;
+        res.send(rows);
+      });
+});
+
