@@ -32,3 +32,23 @@ router.get("/", (req,res)=>{
       });
 });
 
+// SAVE DATA
+router.post("/", (req, res) => {
+    const book_ID_data = req.body.book_ID;
+    const book_name_data = req.body.book_name;
+    const book_author_data = req.body.book_author;
+    const book_price_data = req.body.book_price;
+    var query =
+    "INSERT INTO book (book_ID,book_name,book_author,book_price) VALUES (?,?,?,?)";
+  connection.query(
+    query,
+    [book_ID_data, book_name_data, book_author_data, book_price_data],
+    (err) => {
+      if (err) {
+        res.send({ message: "Error" });
+      } else {
+        res.send({ message: "book added" });
+      }
+    }
+  );
+});
