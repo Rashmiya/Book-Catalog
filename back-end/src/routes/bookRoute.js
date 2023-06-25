@@ -79,4 +79,16 @@ router.put("/", (req, res) => {
     console.log(req.body);
   });
 
-  
+// DELETE
+router.delete("/:book_ID", (req, res) => {
+    const id = req.params.book_ID;
+    var query = "DELETE FROM book WHERE book_ID=?";
+    connection.query(query, [id], (err, rows) => {
+      if (err) console.log(err);
+      if (rows.affectedRows > 0) {
+        res.send({ message: "book deleted" });
+      } else {
+        res.send({ message: "book not found" });
+      }
+    });
+  });
