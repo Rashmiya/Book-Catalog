@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const db=require("../../config/db.config");
+const db=require("../../config/db.config.js");
 const mysql = require("mysql");
 const connection = mysql.createConnection(db.database);
 
@@ -104,5 +104,5 @@ router.get("/:book_name", (req, res) => {
     });
   });
 
-  
+
   module.exports = router;
