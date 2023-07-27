@@ -1,0 +1,13 @@
+.sidebar{
+    min-height: 100vh;
+    max-height: auto;
+    background-color: blue;
+}
+.content{
+    min-height: 10vh;
+     background-color: green;
+}
+.footer{
+    min-height: 50vh;
+     background-color: red;
+}

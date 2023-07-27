@@ -1,0 +1,25 @@
+.sidebar{
+    min-height: 100vh;
+    max-height: auto;
+    background-color:#dfe4ea;
+}
+.content{
+    margin: 2%;
+    min-height: auto;
+     background-color:#ffffff;
+     display: grid;
+     grid-template-columns: repeat(4,1fr);
+     grid-auto-rows: minmax(250px,auto);
+     grid-column-gap: 2rem;
+     grid-row-gap: 2rem;
+}
+.footer{
+    min-height: 50vh;
+     background-color: red;
+}
+.btnArea1{
+    display: flex;
+    justify-content: flex-end;
+    margin: 2%;
+    box-sizing: border-box;
+}
